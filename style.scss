@@ -1,0 +1,1666 @@
+html {
+    font-size: 62.5%;
+    font-family: 'Noto Serif', serif;
+    color: #5f5f5f;
+}
+
+@media screen and (max-width:480px) {
+    h1 {
+        font-size: 40px;
+        font-weight: bold;
+    }
+    h2 {
+        font-size: 26px;
+        font-weight: bold;
+    }
+    h3 {
+        font-size: 20px;
+        font-weight: bold;
+    }
+    p {
+        font-size: 16px;
+        line-height: 150%;
+        letter-spacing: 0.2rem;
+    }
+    .page-top {
+        display: block;
+        color: #5f5f5f;
+        position: fixed;
+        bottom: 63px;
+        right: -100px;
+        z-index: 2000;
+        padding: 1rem 2rem;
+        font-size: 2rem;
+        box-shadow: 0 0 3px #cfcfcf;
+        border-radius: 3px 0 0 3px/3px 0 0 3px;
+        background-color: #fff;
+        transition: 0.6s ease-in-out;
+    }
+    .page-topIn {
+        right: 0;
+    }
+    .sp {
+        display: block;
+    }
+    .end-message {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        font-size: 2rem;
+        transform: translate(-50%, -50%);
+        z-index: 2000;
+        box-shadow: 0 0 3px #cfcfcf;
+        border-radius: 3px 0 0 3px/3px 0 0 3px;
+        background-color: rgba($color: #ffffff, $alpha: 0.9);
+    }
+    .false-message {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        font-size: 2rem;
+        transform: translate(-50%, -50%);
+        z-index: 2000;
+        box-shadow: 0 0 3px #cfcfcf;
+        border-radius: 3px 0 0 3px/3px 0 0 3px;
+        background-color: rgba($color: #ffffff, $alpha: 0.9);
+    }
+    .header {
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 2000;
+        box-shadow: 5px 0 5px #cfcfcf;
+        background-color: #fff;
+        .header-inner {
+            width: 90%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            height: 70px;
+            .menuicon {
+                width: 50px;
+                margin-left: auto;
+                span {
+                    display: block;
+                    width: 40px;
+                    height: 5px;
+                    margin: 5px;
+                    background-color: #5f5f5f;
+                    border-radius: 15px/15px;
+                }
+            }
+            .mask {
+                display: block;
+                position: fixed;
+                top: 70px;
+                right: -100vw;
+                width: 100VW;
+                height: 100vh;
+                background-color: rgba($color: #000000, $alpha: 0.7);
+                transition: 0.7s ease-in-out;
+            }
+            #flag:checked~.mask {
+                right: 0;
+            }
+            .header-logo__main {
+                font-family: 'Oswald', sans-serif;
+                font-size: 3rem;
+            }
+            .header-navi {
+                display: block;
+                position: fixed;
+                top: 70px;
+                right: -70vw;
+                width: 70vw;
+                height: calc(100vh - 70px);
+                background-color: #fff;
+                color: #5f5f5f;
+                transition: 0.7s ease-in-out;
+                ul {
+                    .header-navi__list {
+                        display: block;
+                        font-size: 2.5rem;
+                        padding: 1rem;
+                        margin: 2rem;
+                        border-bottom: 1px solid #5f5f5f;
+                    }
+                }
+            }
+            .navi-onoff {
+                right: 0;
+            }
+        }
+    }
+    .main {
+        width: 100%;
+        margin-top: 70px;
+        .top {
+            height: calc(100vh - 70px);
+            position: relative;
+            .top-inner {
+                width: 100%;
+                margin: 0 auto;
+                position: relative;
+                height: 100%;
+                .top-textarea {
+                    position: absolute;
+                    transform: translate(0, -50%);
+                    top: 50%;
+                    padding: 10px;
+                    z-index: 1000;
+                    .top-catchcopy {
+                        padding: 20px;
+                        font-size: 3rem;
+                    }
+                    .top-subcopy {
+                        padding: 20px;
+                        font-size: 2.5rem;
+                    }
+                    .top-text {
+                        margin: 20px;
+                        font-size: 3rem;
+                        display: inline-block;
+                        position: relative;
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            display: inline-block;
+                            width: 110%;
+                            height: 5px;
+                            background-color: #cfcfcf;
+                            bottom: 0;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                        }
+                    }
+                }
+                .top-imagearea {
+                    margin-left: auto;
+                    width: 70%;
+                    height: 100%;
+                    background: url(../img/portfolio01.jpg) no-repeat;
+                    background-position: right 30% bottom 0;
+                    background-size: cover;
+                }
+            }
+            .scrolltext {
+                position: absolute;
+                padding: 0 10px;
+                right: 0;
+                bottom: 10px;
+                writing-mode: vertical-rl;
+                p {
+                    font-size: 1.5rem;
+                    letter-spacing: 0.5rem;
+                    font-family: 'Oswald', sans-serif;
+                    color: black;
+                }
+            }
+        }
+    }
+    .about {
+        padding: 100px 0 50px 0;
+        width: 100%;
+        h2 {
+            text-align: center;
+            font-family: 'Oswald', sans-serif;
+            position: relative;
+            letter-spacing: 1rem;
+            &::after {
+                content: "私について";
+                display: block;
+                width: 100%;
+                position: absolute;
+                transform: translate(-50%, 100%);
+                bottom: -1rem;
+                left: 50%;
+                font-size: 2rem;
+                color: rgb(121, 121, 121);
+            }
+        }
+        .about-inner {
+            padding: 50px 0 0 0;
+            width: 90%;
+            margin: 0 auto;
+            .about-profilearea {
+                width: 90%;
+                text-align: center;
+                margin: 50px auto 0 auto;
+                h3 {
+                    margin: 50px 0;
+                }
+                .profile-iconarea {
+                    img {
+                        width: 100%;
+                        border-radius: 15px/15px;
+                    }
+                }
+            }
+            .about-textarea {
+                width: 100%;
+                padding: 0 5%;
+                p {
+                    margin: 2rem 0;
+                    &:nth-of-type(3) {
+                        margin-top: 5rem;
+                    }
+                }
+            }
+        }
+    }
+    .skill {
+        padding: 100px 0 50px 0;
+        width: 100%;
+        h2 {
+            text-align: center;
+            font-family: 'Oswald', sans-serif;
+            position: relative;
+            letter-spacing: 1rem;
+            &::after {
+                content: "能力";
+                display: inline-block;
+                width: 100%;
+                position: absolute;
+                transform: translate(-50%, 100%);
+                bottom: -1rem;
+                left: 50%;
+                font-size: 2rem;
+                color: rgb(255, 112, 112);
+            }
+        }
+        .skill-inner {
+            padding: 50px 0 0 0;
+            width: 90%;
+            margin: 0 auto;
+            justify-content: space-between;
+            text-align: center;
+            .skill-card {
+                width: 90%;
+                margin: 10px auto 10px auto;
+                border: 1px solid #cfcfcf;
+                background-color: rgb(241, 241, 241);
+                box-shadow: 5px 5px 5px #b1b1b1;
+                .card-title {
+                    padding: 10px 0;
+                    letter-spacing: 3px;
+                }
+                .card-image {
+                    padding: 20px 0;
+                    text-align: center;
+                    background-color: #fff;
+                    img {
+                        height: 80px;
+                        transition: 0.5s ease-in-out
+                    }
+                }
+                .card-text {
+                    padding: 20px;
+                }
+                &:hover img {
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
+    .work {
+        padding: 100px 0;
+        .work-heding {
+            font-family: 'Oswald', sans-serif;
+            text-align: center;
+            position: relative;
+            letter-spacing: 1rem;
+            &::after {
+                content: "制作実績";
+                display: block;
+                width: 100%;
+                position: absolute;
+                transform: translate(-50%, 100%);
+                bottom: -1rem;
+                left: 50%;
+                font-size: 2rem;
+                color: rgb(112, 112, 255);
+            }
+        }
+        .work-inner {
+            padding: 50px 0 0 0;
+            width: 90%;
+            margin: 0 auto;
+            .work-items {
+                align-items: center;
+                width: 100%;
+                padding: 50px 0;
+                .work-title {
+                    padding: 20px 0;
+                }
+                .work-image {
+                    width: 100%;
+                    height: 500px;
+                    overflow: scroll;
+                    box-sizing: border-box;
+                    transition: 0.2s ease-in-out;
+                    &:hover {
+                        box-shadow: 0 0 10px black;
+                    }
+                    img {
+                        width: 100%;
+                        background-size: cover;
+                        background-position: center;
+                    }
+                }
+                &:nth-of-type(even) .work-textarea {
+                    order: 1;
+                }
+                &:nth-of-type(even) .work-image {
+                    order: 2;
+                }
+            }
+        }
+    }
+    .contact {
+        background-color: rgb(240, 240, 240);
+        width: 100%;
+        padding: 100px 0;
+        .contact-heding {
+            font-family: 'Oswald', sans-serif;
+            text-align: center;
+            position: relative;
+            letter-spacing: 1rem;
+            &::after {
+                content: "お問い合わせ";
+                display: block;
+                width: 100%;
+                position: absolute;
+                transform: translate(-50%, 100%);
+                bottom: -1rem;
+                left: 50%;
+                font-size: 2rem;
+                color: rgb(57, 223, 15);
+            }
+        }
+        .contact-inner {
+            width: 90%;
+            margin: 0 auto;
+            padding: 50px 0 0 0;
+            .contact-wrap {
+                .contact-left {
+                    width: 100%;
+                    .contact-namearea {
+                        margin: 20px;
+                        label {
+                            display: block;
+                            font-size: 1.4rem;
+                            position: relative;
+                            &::after {
+                                position: absolute;
+                                content: "必須";
+                                right: 0;
+                                top: 50%;
+                                background-color: rgb(255, 100, 100);
+                                color: rgb(255, 255, 255);
+                                border-radius: 5px/5px;
+                                font-size: 1.4rem;
+                                padding: 0 0.5rem;
+                                transform: translate(0, -50%);
+                            }
+                        }
+                        input {
+                            display: block;
+                            width: 100%;
+                            font-size: 1.4rem;
+                            box-shadow: 0 0 10px rgb(206, 206, 206) inset;
+                            background-color: #fff;
+                            border-radius: 5px/5px;
+                            color: black;
+                            padding: 5px;
+                        }
+                    }
+                    .contact-emailarea {
+                        margin: 20px;
+                        label {
+                            display: block;
+                            font-size: 1.4rem;
+                            position: relative;
+                            &::after {
+                                position: absolute;
+                                content: "必須";
+                                right: 0;
+                                top: 50%;
+                                background-color: rgb(255, 100, 100);
+                                color: rgb(255, 255, 255);
+                                border-radius: 5px/5px;
+                                font-size: 1.4rem;
+                                padding: 0 0.5rem;
+                                transform: translate(0, -50%);
+                            }
+                        }
+                        input {
+                            display: block;
+                            font-size: 1.4rem;
+                            box-shadow: 0 0 10px rgb(206, 206, 206) inset;
+                            background-color: #fff;
+                            border-radius: 5px/5px;
+                            color: black;
+                            padding: 5px;
+                            width: 100%;
+                        }
+                    }
+                    .contact-titlearea {
+                        margin: 20px;
+                        label {
+                            display: block;
+                            font-size: 1.4rem;
+                            position: relative;
+                            &::after {
+                                position: absolute;
+                                content: "必須";
+                                right: 0;
+                                top: 50%;
+                                background-color: rgb(255, 100, 100);
+                                color: rgb(255, 255, 255);
+                                border-radius: 5px/5px;
+                                font-size: 1.4rem;
+                                padding: 0 0.5rem;
+                                transform: translate(0, -50%);
+                            }
+                        }
+                        input {
+                            display: block;
+                            font-size: 1.4rem;
+                            box-shadow: 0 0 10px rgb(206, 206, 206) inset;
+                            background-color: #fff;
+                            border-radius: 5px/5px;
+                            color: black;
+                            padding: 5px;
+                            width: 100%;
+                        }
+                    }
+                }
+                .contact-right {
+                    width: 100%;
+                    .contact-textarea {
+                        height: 100%;
+                        margin: 20px;
+                        label {
+                            display: block;
+                            font-size: 1.4rem;
+                            position: relative;
+                            &::after {
+                                position: absolute;
+                                content: "必須";
+                                right: 0;
+                                top: 50%;
+                                background-color: rgb(255, 100, 100);
+                                color: rgb(255, 255, 255);
+                                border-radius: 5px/5px;
+                                font-size: 1.4rem;
+                                padding: 0 0.5rem;
+                                transform: translate(0, -50%);
+                            }
+                        }
+                        textarea {
+                            display: block;
+                            font-size: 1.4rem;
+                            width: 100%;
+                            box-shadow: 0 0 10px rgb(206, 206, 206) inset;
+                            background-color: #fff;
+                            border-radius: 5px/5px;
+                            color: black;
+                            padding: 5px;
+                        }
+                    }
+                }
+                .submitarea {
+                    width: 100%;
+                    text-align: center;
+                    margin: 25px auto 0 auto;
+                    font-size: 1.4rem;
+                    button {
+                        padding: 10px 50px;
+                        background-color: #fff;
+                        border-radius: 5px/5px;
+                        color: black;
+                        box-shadow: 0 0 10px rgb(155, 155, 155);
+                        transition: 0.2s ease-in-out;
+                        cursor: pointer;
+                        &:hover {
+                            background-color: rgb(255, 100, 100);
+                            color: rgb(255, 255, 255);
+                            box-shadow: 0 0 10px rgb(143, 59, 59)inset;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .footer {
+        width: 100%;
+        text-align: center;
+        .footer-inner {
+            width: 90%;
+            margin: 0 auto;
+            ul {
+                display: flex;
+                justify-content: center;
+                li {
+                    margin: 10px 20px;
+                    img {
+                        width: 25px;
+                        height: 25px;
+                    }
+                }
+            }
+        }
+        .copy {
+            font-size: 1.2rem;
+            color: black;
+        }
+    }
+}
+
+@media screen and (min-width:481px) and (max-width:1029px) {
+    h1 {
+        font-size: 48px;
+        font-weight: bold;
+    }
+    h2 {
+        font-size: 36px;
+        font-weight: bold;
+    }
+    h3 {
+        font-size: 24px;
+        font-weight: bold;
+    }
+    p {
+        font-size: 16px;
+        line-height: 150%;
+        letter-spacing: 0.2rem;
+    }
+    .page-top {
+        display: block;
+        color: #5f5f5f;
+        position: fixed;
+        bottom: 63px;
+        right: -100px;
+        z-index: 2000;
+        padding: 1rem 2rem;
+        font-size: 3rem;
+        box-shadow: 0 0 3px #cfcfcf;
+        border-radius: 3px 0 0 3px/3px 0 0 3px;
+        background-color: #fff;
+        transition: 0.6s ease-in-out;
+    }
+    .page-topIn {
+        right: 0;
+    }
+    .sp {
+        display: block;
+    }
+    .end-message {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        font-size: 3rem;
+        transform: translate(-50%, -50%);
+        z-index: 2000;
+        box-shadow: 0 0 3px #cfcfcf;
+        border-radius: 3px 0 0 3px/3px 0 0 3px;
+        background-color: rgba($color: #ffffff, $alpha: 0.9);
+    }
+    .false-message {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        font-size: 3rem;
+        transform: translate(-50%, -50%);
+        z-index: 2000;
+        box-shadow: 0 0 3px #cfcfcf;
+        border-radius: 3px 0 0 3px/3px 0 0 3px;
+        background-color: rgba($color: #ffffff, $alpha: 0.9);
+    }
+    .header {
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 2000;
+        box-shadow: 5px 0 5px #cfcfcf;
+        background-color: #fff;
+        .header-inner {
+            width: 90%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            height: 70px;
+            .menuicon {
+                width: 50px;
+                margin-left: auto;
+                span {
+                    display: block;
+                    width: 40px;
+                    height: 5px;
+                    margin: 5px;
+                    background-color: #5f5f5f;
+                    border-radius: 15px/15px;
+                }
+            }
+            .mask {
+                display: block;
+                position: fixed;
+                top: 70px;
+                right: -100vw;
+                width: 100VW;
+                height: 100vh;
+                background-color: rgba($color: #000000, $alpha: 0.7);
+                transition: 0.7s ease-in-out;
+            }
+            .header-logo__main {
+                font-family: 'Oswald', sans-serif;
+                font-size: 3rem;
+            }
+            .header-navi {
+                display: block;
+                position: fixed;
+                top: 70px;
+                right: -70vw;
+                width: 70vw;
+                height: calc(100vh - 70px);
+                background-color: #fff;
+                color: #5f5f5f;
+                transition: 0.7s ease-in-out;
+                ul {
+                    .header-navi__list {
+                        display: block;
+                        font-size: 2.5rem;
+                        padding: 1rem;
+                        margin: 2rem;
+                        border-bottom: 1px solid #5f5f5f;
+                    }
+                }
+            }
+            .navi-onoff {
+                right: 0;
+            }
+        }
+    }
+    .main {
+        width: 100%;
+        margin-top: 70px;
+        .top {
+            height: calc(100vh - 70px);
+            position: relative;
+            .top-inner {
+                width: 90%;
+                margin: 0 auto;
+                position: relative;
+                height: 100%;
+                .top-textarea {
+                    position: absolute;
+                    transform: translate(0, -50%);
+                    top: 50%;
+                    padding: 50px;
+                    z-index: 1000;
+                    .top-catchcopy {
+                        padding: 50px;
+                        font-size: 4rem;
+                    }
+                    .top-subcopy {
+                        padding: 50px;
+                        font-size: 4rem;
+                    }
+                    .top-text {
+                        margin: 50px;
+                        font-size: 5rem;
+                        display: inline-block;
+                        position: relative;
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            display: inline-block;
+                            width: 110%;
+                            height: 5px;
+                            background-color: #cfcfcf;
+                            bottom: 0;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                        }
+                    }
+                }
+                .top-imagearea {
+                    margin-left: auto;
+                    width: 70%;
+                    height: 100%;
+                    background: url(../img/portfolio01.jpg);
+                    background-position: right 30% bottom 0;
+                    background-size: cover;
+                }
+            }
+            .scrolltext {
+                position: absolute;
+                padding: 0 30px;
+                right: 0;
+                bottom: 10px;
+                writing-mode: vertical-rl;
+                p {
+                    font-size: 3rem;
+                    letter-spacing: 0.5rem;
+                    font-family: 'Oswald', sans-serif;
+                    color: black;
+                }
+            }
+        }
+    }
+    .about {
+        padding: 150px 0 50px 0;
+        width: 100%;
+        h2 {
+            text-align: center;
+            font-family: 'Oswald', sans-serif;
+            position: relative;
+            letter-spacing: 1rem;
+            &::after {
+                content: "私について";
+                display: block;
+                width: 100%;
+                position: absolute;
+                transform: translate(-50%, 100%);
+                bottom: -1rem;
+                left: 50%;
+                font-size: 2rem;
+                color: rgb(121, 121, 121);
+            }
+        }
+        .about-inner {
+            padding: 100px 0;
+            width: 90%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            .about-profilearea {
+                width: 50%;
+                text-align: center;
+                margin-top: 50px;
+                h3 {
+                    margin: 50px 0;
+                }
+                .profile-iconarea {
+                    img {
+                        width: 70%;
+                        border-radius: 15px/15px;
+                    }
+                }
+            }
+            .about-textarea {
+                width: 50%;
+                padding: 0 5%;
+                p {
+                    margin: 2rem 0;
+                    &:nth-of-type(3) {
+                        margin-top: 5rem;
+                    }
+                }
+            }
+        }
+    }
+    .skill {
+        padding: 150px 0 50px 0;
+        width: 100%;
+        h2 {
+            text-align: center;
+            font-family: 'Oswald', sans-serif;
+            position: relative;
+            letter-spacing: 1rem;
+            &::after {
+                content: "能力";
+                display: inline-block;
+                width: 100%;
+                position: absolute;
+                transform: translate(-50%, 100%);
+                bottom: -1rem;
+                left: 50%;
+                font-size: 2rem;
+                color: rgb(255, 112, 112);
+            }
+        }
+        .skill-inner {
+            padding: 100px 0;
+            width: 90%;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            text-align: center;
+            .skill-card {
+                width: 45%;
+                margin: 2.5%;
+                border: 1px solid #cfcfcf;
+                background-color: rgb(241, 241, 241);
+                box-shadow: 5px 5px 10px #b1b1b1;
+                .card-title {
+                    padding: 20px 0;
+                }
+                .card-image {
+                    padding: 20px 0;
+                    text-align: center;
+                    background-color: #fff;
+                    img {
+                        height: 120px;
+                        transition: 0.5s ease-in-out
+                    }
+                }
+                .card-text {
+                    padding: 50px;
+                }
+                &:hover img {
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
+    .work {
+        padding: 150px 0 50px 0;
+        .work-heding {
+            font-family: 'Oswald', sans-serif;
+            text-align: center;
+            position: relative;
+            letter-spacing: 1rem;
+            &::after {
+                content: "制作実績";
+                display: block;
+                width: 100%;
+                position: absolute;
+                transform: translate(-50%, 100%);
+                bottom: -1rem;
+                left: 50%;
+                font-size: 2rem;
+                color: rgb(112, 112, 255);
+            }
+        }
+        .work-inner {
+            padding: 100px 0;
+            width: 90%;
+            margin: 0 auto;
+            .work-items {
+                width: 100%;
+                padding: 50px 0;
+                .work-title {
+                    padding: 20px 0;
+                }
+                .work-image {
+                    width: 100%;
+                    height: 500px;
+                    overflow: scroll;
+                    box-sizing: border-box;
+                    transition: 0.2s ease-in-out;
+                    &:hover {
+                        box-shadow: 0 0 10px black;
+                    }
+                    img {
+                        width: 100%;
+                        background-size: cover;
+                        background-position: center;
+                    }
+                }
+                &:nth-of-type(even) .work-textarea {
+                    order: 1;
+                }
+                &:nth-of-type(even) .work-image {
+                    order: 2;
+                }
+            }
+        }
+    }
+    .contact {
+        background-color: rgb(240, 240, 240);
+        width: 100%;
+        padding: 150px 0 50px 0;
+        .contact-heding {
+            font-family: 'Oswald', sans-serif;
+            text-align: center;
+            position: relative;
+            letter-spacing: 1rem;
+            &::after {
+                content: "お問い合わせ";
+                display: block;
+                width: 100%;
+                position: absolute;
+                transform: translate(-50%, 100%);
+                bottom: -1rem;
+                left: 50%;
+                font-size: 2rem;
+                color: rgb(57, 223, 15);
+            }
+        }
+        .contact-inner {
+            width: 90%;
+            margin: 0 auto;
+            padding: 100px 0;
+            .contact-wrap {
+                .contact-left {
+                    width: 100%;
+                    .contact-namearea {
+                        margin: 20px;
+                        label {
+                            display: block;
+                            font-size: 1.4rem;
+                            position: relative;
+                            &::after {
+                                position: absolute;
+                                content: "必須";
+                                right: 0;
+                                top: 50%;
+                                background-color: rgb(255, 100, 100);
+                                color: rgb(255, 255, 255);
+                                border-radius: 5px/5px;
+                                font-size: 1.4rem;
+                                padding: 0 0.5rem;
+                                transform: translate(0, -50%);
+                            }
+                        }
+                        input {
+                            display: block;
+                            width: 100%;
+                            font-size: 1.4rem;
+                            box-shadow: 0 0 10px rgb(206, 206, 206) inset;
+                            background-color: #fff;
+                            border-radius: 5px/5px;
+                            color: black;
+                            padding: 5px;
+                        }
+                    }
+                    .contact-emailarea {
+                        margin: 20px;
+                        label {
+                            display: block;
+                            font-size: 1.4rem;
+                            position: relative;
+                            &::after {
+                                position: absolute;
+                                content: "必須";
+                                right: 0;
+                                top: 50%;
+                                background-color: rgb(255, 100, 100);
+                                color: rgb(255, 255, 255);
+                                border-radius: 5px/5px;
+                                font-size: 1.4rem;
+                                padding: 0 0.5rem;
+                                transform: translate(0, -50%);
+                            }
+                        }
+                        input {
+                            display: block;
+                            font-size: 1.4rem;
+                            box-shadow: 0 0 10px rgb(206, 206, 206) inset;
+                            background-color: #fff;
+                            border-radius: 5px/5px;
+                            color: black;
+                            padding: 5px;
+                            width: 100%;
+                        }
+                    }
+                    .contact-titlearea {
+                        margin: 20px;
+                        label {
+                            display: block;
+                            font-size: 1.4rem;
+                            position: relative;
+                            &::after {
+                                position: absolute;
+                                content: "必須";
+                                right: 0;
+                                top: 50%;
+                                background-color: rgb(255, 100, 100);
+                                color: rgb(255, 255, 255);
+                                border-radius: 5px/5px;
+                                font-size: 1.4rem;
+                                padding: 0 0.5rem;
+                                transform: translate(0, -50%);
+                            }
+                        }
+                        input {
+                            display: block;
+                            font-size: 1.4rem;
+                            box-shadow: 0 0 10px rgb(206, 206, 206) inset;
+                            background-color: #fff;
+                            border-radius: 5px/5px;
+                            color: black;
+                            padding: 5px;
+                            width: 100%;
+                        }
+                    }
+                }
+                .contact-right {
+                    width: 100%;
+                    .contact-textarea {
+                        height: 100%;
+                        margin: 20px;
+                        label {
+                            display: block;
+                            font-size: 1.4rem;
+                            position: relative;
+                            &::after {
+                                position: absolute;
+                                content: "必須";
+                                right: 0;
+                                top: 50%;
+                                background-color: rgb(255, 100, 100);
+                                color: rgb(255, 255, 255);
+                                border-radius: 5px/5px;
+                                font-size: 1.4rem;
+                                padding: 0 0.5rem;
+                                transform: translate(0, -50%);
+                            }
+                        }
+                        textarea {
+                            display: block;
+                            font-size: 1.4rem;
+                            width: 100%;
+                            box-shadow: 0 0 10px rgb(206, 206, 206) inset;
+                            background-color: #fff;
+                            border-radius: 5px/5px;
+                            color: black;
+                            padding: 5px;
+                        }
+                    }
+                }
+                .submitarea {
+                    width: 100%;
+                    text-align: center;
+                    margin: 25px auto 0 auto;
+                    font-size: 1.4rem;
+                    button {
+                        padding: 10px 50px;
+                        background-color: #fff;
+                        border-radius: 5px/5px;
+                        color: black;
+                        box-shadow: 0 0 10px rgb(155, 155, 155);
+                        transition: 0.2s ease-in-out;
+                        cursor: pointer;
+                        &:hover {
+                            background-color: rgb(255, 100, 100);
+                            color: rgb(255, 255, 255);
+                            box-shadow: 0 0 10px rgb(143, 59, 59)inset;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .footer {
+        width: 100%;
+        text-align: center;
+        .footer-inner {
+            width: 90%;
+            margin: 0 auto;
+            ul {
+                display: flex;
+                justify-content: center;
+                li {
+                    margin: 10px 20px;
+                    img {
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+            }
+        }
+        .copy {
+            font-size: 1.2rem;
+            color: black;
+        }
+    }
+}
+
+@media screen and (min-width:1030px) {
+    h1 {
+        font-size: 60px;
+        font-weight: bold;
+    }
+    h2 {
+        font-size: 48px;
+        font-weight: bold;
+    }
+    h3 {
+        font-size: 28px;
+        font-weight: bold;
+    }
+    p {
+        font-size: 20px;
+        line-height: 150%;
+        letter-spacing: 0.2rem;
+    }
+    .page-top {
+        display: block;
+        color: #5f5f5f;
+        position: fixed;
+        bottom: 63px;
+        right: -200px;
+        z-index: 2000;
+        padding: 1rem 2rem;
+        font-size: 4rem;
+        box-shadow: 0 0 3px #cfcfcf;
+        border-radius: 3px 0 0 3px/3px 0 0 3px;
+        background-color: #fff;
+        transition: 0.6s ease-in-out;
+    }
+    .page-topIn {
+        right: 0;
+    }
+    .sp {
+        display: none;
+    }
+    .end-message {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        font-size: 4rem;
+        transform: translate(-50%, -50%);
+        z-index: 2000;
+        box-shadow: 0 0 3px #cfcfcf;
+        border-radius: 3px 0 0 3px/3px 0 0 3px;
+        background-color: rgba($color: #ffffff, $alpha: 0.9);
+    }
+    .false-message {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        font-size: 4rem;
+        transform: translate(-50%, -50%);
+        z-index: 2000;
+        box-shadow: 0 0 3px #cfcfcf;
+        border-radius: 3px 0 0 3px/3px 0 0 3px;
+        background-color: rgba($color: #ffffff, $alpha: 0.9);
+    }
+    .header {
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 2000;
+        box-shadow: 5px 0 5px #cfcfcf;
+        background-color: #fff;
+        .header-inner {
+            width: 90%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            height: 100px;
+            .menuicon {
+                display: none;
+            }
+            .header-logo__main {
+                font-family: 'Oswald', sans-serif;
+            }
+            .header-navi {
+                margin-left: auto;
+                ul {
+                    display: flex;
+                    text-align: center;
+                    .header-navi__list {
+                        display: block;
+                        font-size: 2rem;
+                        width: 140px;
+                        padding: 1rem;
+                        margin: 0 1rem;
+                        position: relative;
+                        transition: 0.2s ease-in-out;
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            transform: translate(-50%, -50%);
+                            opacity: 0;
+                            left: 50%;
+                            margin: auto;
+                            bottom: 10%;
+                            width: 50%;
+                            height: 3px;
+                            background-color: rgb(87, 87, 87);
+                            transition: 0.2s ease-in-out;
+                        }
+                        &:hover::after {
+                            width: 110%;
+                            bottom: 0;
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .main {
+        width: 100%;
+        margin-top: 100px;
+        .top {
+            height: calc(100vh - 100px);
+            position: relative;
+            .top-inner {
+                width: 90%;
+                margin: 0 auto;
+                position: relative;
+                height: 100%;
+                .top-textarea {
+                    position: absolute;
+                    transform: translate(0, -50%);
+                    top: 50%;
+                    padding: 50px;
+                    z-index: 1000;
+                    .top-catchcopy {
+                        padding: 50px;
+                        font-size: 5rem;
+                    }
+                    .top-subcopy {
+                        padding: 50px;
+                        font-size: 5rem;
+                    }
+                    .top-text {
+                        margin: 50px;
+                        font-size: 6rem;
+                        display: inline-block;
+                        position: relative;
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            display: inline-block;
+                            width: 110%;
+                            height: 5px;
+                            background-color: #cfcfcf;
+                            bottom: 0;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                        }
+                    }
+                }
+                .top-imagearea {
+                    margin-left: auto;
+                    width: 70%;
+                    height: 100%;
+                    background: url(../img/portfolio01.jpg);
+                    background-position: bottom 0 right 0;
+                    background-size: cover;
+                }
+            }
+            .scrolltext {
+                position: absolute;
+                padding: 0 30px;
+                right: 0;
+                bottom: 10px;
+                writing-mode: vertical-rl;
+                p {
+                    font-size: 3rem;
+                    letter-spacing: 0.5rem;
+                    font-family: 'Oswald', sans-serif;
+                    color: black;
+                }
+            }
+        }
+    }
+    .about {
+        padding: 200px 0 50px 0;
+        width: 100%;
+        h2 {
+            text-align: center;
+            font-family: 'Oswald', sans-serif;
+            position: relative;
+            letter-spacing: 1rem;
+            &::after {
+                content: "私について";
+                display: block;
+                width: 100%;
+                position: absolute;
+                transform: translate(-50%, 100%);
+                bottom: -1rem;
+                left: 50%;
+                font-size: 2rem;
+                color: rgb(121, 121, 121);
+            }
+        }
+        .about-inner {
+            padding: 100px 0;
+            width: 90%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            .about-profilearea {
+                width: 50%;
+                text-align: center;
+                margin-top: 50px;
+                h3 {
+                    margin: 50px 0;
+                }
+                .profile-iconarea {
+                    img {
+                        width: 70%;
+                        border-radius: 15px/15px;
+                    }
+                }
+            }
+            .about-textarea {
+                width: 50%;
+                padding: 0 5%;
+                p {
+                    margin: 2rem 0;
+                    &:nth-of-type(3) {
+                        margin-top: 5rem;
+                    }
+                }
+            }
+        }
+    }
+    .skill {
+        padding: 200px 0 50px 0;
+        width: 100%;
+        h2 {
+            text-align: center;
+            font-family: 'Oswald', sans-serif;
+            position: relative;
+            letter-spacing: 1rem;
+            &::after {
+                content: "能力";
+                display: inline-block;
+                width: 100%;
+                position: absolute;
+                transform: translate(-50%, 100%);
+                bottom: -1rem;
+                left: 50%;
+                font-size: 2rem;
+                color: rgb(255, 112, 112);
+            }
+        }
+        .skill-inner {
+            padding: 100px 0;
+            width: 90%;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            text-align: center;
+            .skill-card {
+                width: 32%;
+                margin: 0.63%;
+                border: 1px solid #cfcfcf;
+                background-color: rgb(241, 241, 241);
+                box-shadow: 5px 5px 10px #b1b1b1;
+                .card-title {
+                    padding: 20px 0;
+                    letter-spacing: 3px;
+                }
+                .card-image {
+                    padding: 20px 0;
+                    text-align: center;
+                    background-color: #fff;
+                    img {
+                        height: 120px;
+                        transition: 0.5s ease-in-out
+                    }
+                }
+                &:hover img {
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
+    .work {
+        padding: 200px 0 50px 0;
+        .work-heding {
+            font-family: 'Oswald', sans-serif;
+            text-align: center;
+            position: relative;
+            letter-spacing: 1rem;
+            &::after {
+                content: "制作実績";
+                display: block;
+                width: 100%;
+                position: absolute;
+                transform: translate(-50%, 100%);
+                bottom: -1rem;
+                left: 50%;
+                font-size: 2rem;
+                color: rgb(112, 112, 255);
+            }
+        }
+        .work-inner {
+            padding: 100px 0;
+            width: 90%;
+            margin: 0 auto;
+            .work-items {
+                width: 100%;
+                padding: 50px 0;
+                .work-title {
+                    padding: 20px 0;
+                }
+                .work-image {
+                    width: 100%;
+                    height: 500px;
+                    overflow: scroll;
+                    box-sizing: border-box;
+                    transition: 0.2s ease-in-out;
+                    &:hover {
+                        box-shadow: 0 0 10px black;
+                    }
+                    img {
+                        width: 100%;
+                        background-size: cover;
+                        background-position: center;
+                    }
+                }
+                &:nth-of-type(even) .work-textarea {
+                    order: 1;
+                }
+                &:nth-of-type(even) .work-image {
+                    order: 2;
+                }
+            }
+        }
+    }
+    .contact {
+        background-color: rgb(240, 240, 240);
+        width: 100%;
+        padding: 200px 0 50px 0;
+        .contact-heding {
+            font-family: 'Oswald', sans-serif;
+            text-align: center;
+            position: relative;
+            letter-spacing: 1rem;
+            &::after {
+                content: "お問い合わせ";
+                display: block;
+                width: 100%;
+                position: absolute;
+                transform: translate(-50%, 100%);
+                bottom: -1rem;
+                left: 50%;
+                font-size: 2rem;
+                color: rgb(57, 223, 15);
+            }
+        }
+        .contact-inner {
+            width: 90%;
+            margin: 0 auto;
+            padding: 100px 0;
+            .contact-wrap {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                .contact-left {
+                    width: 50%;
+                    padding: 0 50px;
+                    .contact-namearea {
+                        margin: 20px;
+                        label {
+                            display: block;
+                            font-size: 3rem;
+                            position: relative;
+                            &::after {
+                                position: absolute;
+                                content: "必須";
+                                right: 0;
+                                top: 50%;
+                                background-color: rgb(255, 100, 100);
+                                color: rgb(255, 255, 255);
+                                border-radius: 5px/5px;
+                                font-size: 2rem;
+                                padding: 0 0.5rem;
+                                transform: translate(0, -50%);
+                            }
+                        }
+                        input {
+                            display: block;
+                            width: 100%;
+                            font-size: 3rem;
+                            box-shadow: 0 0 10px rgb(206, 206, 206) inset;
+                            background-color: #fff;
+                            border-radius: 5px/5px;
+                            color: black;
+                            padding: 5px;
+                        }
+                    }
+                    .contact-emailarea {
+                        margin: 20px;
+                        label {
+                            display: block;
+                            font-size: 3rem;
+                            position: relative;
+                            &::after {
+                                position: absolute;
+                                content: "必須";
+                                right: 0;
+                                top: 50%;
+                                background-color: rgb(255, 100, 100);
+                                color: rgb(255, 255, 255);
+                                border-radius: 5px/5px;
+                                font-size: 2rem;
+                                padding: 0 0.5rem;
+                                transform: translate(0, -50%);
+                            }
+                        }
+                        input {
+                            display: block;
+                            font-size: 3rem;
+                            box-shadow: 0 0 10px rgb(206, 206, 206) inset;
+                            background-color: #fff;
+                            border-radius: 5px/5px;
+                            color: black;
+                            padding: 5px;
+                            width: 100%;
+                        }
+                    }
+                    .contact-titlearea {
+                        margin: 20px;
+                        label {
+                            display: block;
+                            font-size: 3rem;
+                            position: relative;
+                            &::after {
+                                position: absolute;
+                                content: "必須";
+                                right: 0;
+                                top: 50%;
+                                background-color: rgb(255, 100, 100);
+                                color: rgb(255, 255, 255);
+                                border-radius: 5px/5px;
+                                font-size: 2rem;
+                                padding: 0 0.5rem;
+                                transform: translate(0, -50%);
+                            }
+                        }
+                        input {
+                            display: block;
+                            font-size: 3rem;
+                            box-shadow: 0 0 10px rgb(206, 206, 206) inset;
+                            background-color: #fff;
+                            border-radius: 5px/5px;
+                            color: black;
+                            padding: 5px;
+                            width: 100%;
+                        }
+                    }
+                }
+                .contact-right {
+                    width: 50%;
+                    padding: 0 50px;
+                    .contact-textarea {
+                        height: 100%;
+                        margin: 20px;
+                        label {
+                            display: block;
+                            font-size: 3rem;
+                            position: relative;
+                            &::after {
+                                position: absolute;
+                                content: "必須";
+                                right: 0;
+                                top: 50%;
+                                background-color: rgb(255, 100, 100);
+                                color: rgb(255, 255, 255);
+                                border-radius: 5px/5px;
+                                font-size: 2rem;
+                                padding: 0 0.5rem;
+                                transform: translate(0, -50%);
+                            }
+                        }
+                        textarea {
+                            display: block;
+                            font-size: 3rem;
+                            width: 100%;
+                            box-shadow: 0 0 10px rgb(206, 206, 206) inset;
+                            background-color: #fff;
+                            border-radius: 5px/5px;
+                            color: black;
+                            padding: 5px;
+                        }
+                    }
+                }
+                .submitarea {
+                    width: 50%;
+                    text-align: center;
+                    margin: 100px auto 0 auto;
+                    font-size: 2rem;
+                    padding: 50px;
+                    button {
+                        padding: 10px 50px;
+                        background-color: #fff;
+                        border-radius: 5px/5px;
+                        color: black;
+                        box-shadow: 0 0 10px rgb(155, 155, 155);
+                        transition: 0.2s ease-in-out;
+                        cursor: pointer;
+                        &:hover {
+                            background-color: rgb(255, 100, 100);
+                            color: rgb(255, 255, 255);
+                            box-shadow: 0 0 10px rgb(143, 59, 59)inset;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .footer {
+        width: 100%;
+        text-align: center;
+        .footer-inner {
+            width: 90%;
+            margin: 0 auto;
+            ul {
+                display: flex;
+                justify-content: center;
+                li {
+                    margin: 10px 20px;
+                    img {
+                        width: 50px;
+                        height: 50px;
+                    }
+                }
+            }
+        }
+        .copy {
+            font-size: 1.2rem;
+            color: black;
+        }
+    }
+}
